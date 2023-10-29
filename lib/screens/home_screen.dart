@@ -82,16 +82,37 @@ class _HomeState extends State<Home> {
                                 builder: (context) {
                                   return AlertDialog(
                                     title: const Text("Derivability criteria"),
-                                    content: Column(
-                                      children: [
-                                        const Text(
-                                            "This application works by using the derivability criteria that works only when:"),
-                                        Math.tex(
-                                          "\\text{the function is continue in } [a,b], \\text{ derivable in } (a,b) - \\{x_0 \\in (a,b) \\}",
-                                          textStyle: TextStyle(fontSize: 18),
-                                        )
-                                      ],
-                                    ),
+                                    content: Wrap(children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          const Text(
+                                              "This application works by using the derivability criteria that works only when:"),
+                                          const SizedBox(
+                                            height: 5,
+                                          ),
+                                          Math.tex(
+                                            "\\text{the function is continue in }",
+                                            textStyle: TextStyle(fontSize: 18),
+                                          ),
+                                          const SizedBox(
+                                            height: 5,
+                                          ),
+                                          Math.tex(
+                                              " [a,b], \\text{ and derivable in } ",
+                                              textStyle:
+                                                  TextStyle(fontSize: 18)),
+                                          const SizedBox(
+                                            height: 5,
+                                          ),
+                                          Math.tex(
+                                              "(a,b) - \\{x_0 \\in (a,b) \\}",
+                                              textStyle:
+                                                  TextStyle(fontSize: 18))
+                                        ],
+                                      ),
+                                    ]),
                                     actions: [
                                       TextButton(
                                           onPressed: () {

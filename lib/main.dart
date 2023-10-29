@@ -8,6 +8,7 @@ import 'package:derivative_calculator/shared_prefs_helper.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
       routes: {
         "/home": (context) => Home(),
         "/ipconf": (context) => IpAddressForm()
@@ -18,7 +19,10 @@ void main() {
             if (snapshot.hasData) {
               return snapshot.data as Widget;
             } else {
-              return const SpinKitPouringHourGlassRefined(color: Colors.black);
+              return Container(
+                  color: Colors.white,
+                  child: const SpinKitPouringHourGlassRefined(
+                      color: Colors.black));
             }
           })));
 }
